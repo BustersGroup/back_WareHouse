@@ -24,7 +24,6 @@ export const crearAdministrador = async () => {
             });
 
             await admin.save();
-            console.log("Administrador creado exitosamente");
         }
     } catch (err) {
         console.log(`Error al crear al administrador: ${err}`);

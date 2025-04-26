@@ -22,6 +22,7 @@
   "homepage": "https://github.com/BustersGroup/back_WareHouse#readme",
   "dependencies": {
     "argon2": "^0.41.1",
+    "back_warehouse": "file:",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "date-fns": "^4.1.0",

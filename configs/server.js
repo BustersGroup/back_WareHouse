@@ -8,6 +8,7 @@ import { dbConnection } from "./mongo.js"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
+import productRoutes from "../src/product/product.routes.js"
 import { crearAdministrador } from "../src/user/user.controller.js"
 
 const middlewares = (app) => {
@@ -22,6 +23,7 @@ const middlewares = (app) => {
 const routes = (app) =>{
     app.use("/backWarehouse/v1/auth", authRoutes);
     app.use("/backWarehouse/v1/user", userRoutes);
+    app.use("/backWarehouse/v1/product", productRoutes);
 }
 
 const conectarDB = async () =>{
