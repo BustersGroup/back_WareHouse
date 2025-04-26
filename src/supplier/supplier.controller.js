@@ -10,14 +10,14 @@ export const createSupplier = async (req, res) => {
         await supplier.save();
 
         res.status(201).json({
-            ok: true,
+            success: true,
             msg: "Supplier created successfully",
-            supplier  
+            supplier
         });
 
     } catch (error) {
         res.status(500).json({
-            ok: false,
+            success: false,
             msg: "Error creating supplier",
             error: error.message 
         });

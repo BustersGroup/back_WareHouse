@@ -1,6 +1,7 @@
 import User from "../user/user.model.js"
 import Product from "../product/product.model.js"
 import Supplier from "../supplier/supplier.model.js"
+import Client from "../client/client.model.js"
 
 export const emailExists = async (email = "") => {
     const existe = await User.findOne({email})
@@ -42,5 +43,12 @@ export const contactSupplierExists = async (contactSupplier = "") => {
     const existe = await Supplier.findOne({contactSupplier})
         if(existe){
             throw new Error(`The supplier contact ${contactSupplier} is already registered`)
+    }
+}
+
+export const nameClientExists = async (nameClient = "") => {
+    const existe = await Client.findOne({nameClient})
+    if(existe){
+        throw new Error(`The client name ${nameClient} is already registered`)
     }
 }

@@ -4,17 +4,14 @@ const supplierSchema = new Schema({
     nameSupplier:{
         type: String,
         required: [true, "Name supplier is required"],
-        maxLength: [50, "Name supplier cannot exceed 60 characters"]
     },
     contactSupplier:{
-        type: Number,
+        type: String,
         required: true,
-        maxLength: 10
     },
     emailSupplier:{
         type: String,
         required: [true, "Email supplier is required"],
-        maxLength: [50, "Email supplier cannot exceed 50 characters"]
     },
     product: {
         type: String,

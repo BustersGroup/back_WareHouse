@@ -36,8 +36,9 @@ const productSchema = new Schema({
         default: Date.now
     },
     supplier: {
-        type: String,
-        required: [true, "Supplier is required"],
+        type: Schema.Types.ObjectId,
+        ref: 'Supplier',
+        required: true
     },
     status: {
         type: Boolean,
