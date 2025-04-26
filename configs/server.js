@@ -6,6 +6,9 @@ import helmet from "helmet"
 import morgan from "morgan"
 import { dbConnection } from "./mongo.js"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js"
+import authRoutes from "../src/auth/auth.routes.js"
+import userRoutes from "../src/user/user.routes.js"
+import { crearAdministrador } from "../src/user/user.controller.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({extended: false}))
@@ -17,11 +20,14 @@ const middlewares = (app) => {
 }
 
 const routes = (app) =>{
+    app.use("/backWarehouse/v1/auth", authRoutes);
+    app.use("/backWarehouse/v1/user", userRoutes);
 }
 
 const conectarDB = async () =>{
     try{
         await dbConnection()
+        await crearAdministrador();
     }catch(err){
         console.log(`Database connection failed: ${err}`)
         process.exit(1)
