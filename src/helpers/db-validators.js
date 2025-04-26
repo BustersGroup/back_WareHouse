@@ -1,5 +1,6 @@
 import User from "../user/user.model.js"
 import Product from "../product/product.model.js"
+import Supplier from "../supplier/supplier.model.js"
 
 export const emailExists = async (email = "") => {
     const existe = await User.findOne({email})
@@ -27,5 +28,19 @@ export const nameProductExists = async (nameProduct = "") => {
     const existe = await Product.findOne({nameProduct})
     if(existe){
         throw new Error(`The product name ${nameProduct} is already registered`)
+    }
+}
+
+export const emailSupplierExists = async (emailSupplier = "") => {
+    const existe = await Supplier.findOne({emailSupplier})
+    if(existe){
+        throw new Error(`The supplier email ${emailSupplier} is already registered `)
+    }
+}
+
+export const contactSupplierExists = async (contactSupplier = "") => {
+    const existe = await Supplier.findOne({contactSupplier})
+        if(existe){
+            throw new Error(`The supplier contact ${contactSupplier} is already registered`)
     }
 }
