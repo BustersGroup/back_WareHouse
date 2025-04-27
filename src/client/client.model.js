@@ -4,7 +4,6 @@ const clientSchema = new Schema({
     nameClient: {
         type: String,
         required: [true, "Name client is required"],
-        maxLength: [60, "Name client cannot exceed 60 characters"]
     },
     emailClient: {
         type: String,
