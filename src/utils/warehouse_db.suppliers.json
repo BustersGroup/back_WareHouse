@@ -1,0 +1,64 @@
+[{
+  "_id": {
+    "$oid": "680d5e069577df4188915280"
+  },
+  "nameSupplier": "Hola Mundo",
+  "contactSupplier": "1245678890",
+  "emailSupplier": "hola@gmail.com",
+  "product": "Bebidas",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-04-26T22:28:22.400Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-26T22:28:22.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680e74fbfe39eb7d0f58e5f0"
+  },
+  "nameSupplier": "Distribuidora El Granero",
+  "contactSupplier": "Carlos Mendoza",
+  "emailSupplier": "carlosm@granero.com",
+  "product": "Granos y cereales",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-04-27T18:18:35.831Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:18:35.831Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680e7508fe39eb7d0f58e5f5"
+  },
+  "nameSupplier": "EcoFruits Importaciones",
+  "contactSupplier": "Laura Jiménez",
+  "emailSupplier": "laura@ecofruits.com",
+  "product": "Frutas y verduras",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-04-27T18:18:48.189Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:18:48.189Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680e7510fe39eb7d0f58e5fa"
+  },
+  "nameSupplier": "TechWarehouse S.A.",
+  "contactSupplier": "Roberto Salazar",
+  "emailSupplier": "roberto@techwarehouse.com",
+  "product": "Electrónica y accesorios",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-04-27T18:18:56.881Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:18:56.881Z"
+  }
+}]

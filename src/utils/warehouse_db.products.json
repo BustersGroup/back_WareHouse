@@ -1,0 +1,150 @@
+[{
+  "_id": {
+    "$oid": "680e7593fe39eb7d0f58e5ff"
+  },
+  "nameProduct": "Arroz Integral",
+  "descriptionProduct": "Arroz integral de grano largo, ideal para una dieta balanceada.",
+  "price": 18.5,
+  "stock": 260,
+  "category": "Granos",
+  "imageProduct": null,
+  "sales": 0,
+  "supplier": {
+    "$oid": "680d5e069577df4188915280"
+  },
+  "status": true,
+  "entryDate": {
+    "$date": "2025-04-27T18:21:07.890Z"
+  },
+  "createdAt": {
+    "$date": "2025-04-27T18:21:07.891Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:39:41.084Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680e75fffe39eb7d0f58e604"
+  },
+  "nameProduct": "Frijol Negro",
+  "descriptionProduct": "Frijol negro premium, alto contenido de proteína.",
+  "price": 22,
+  "stock": 110,
+  "category": "Granos",
+  "imageProduct": "frijolNegro-1745778175143.png",
+  "sales": 0,
+  "supplier": {
+    "$oid": "680d5e069577df4188915280"
+  },
+  "status": true,
+  "entryDate": {
+    "$date": "2025-04-27T18:22:55.176Z"
+  },
+  "createdAt": {
+    "$date": "2025-04-27T18:22:55.176Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:43:34.427Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680e7656fe39eb7d0f58e609"
+  },
+  "nameProduct": "Manzana Roja",
+  "descriptionProduct": "Manzanas frescas y jugosas, importadas directamente de EcoFruits.",
+  "price": 5.75,
+  "stock": 300,
+  "category": "Frutas",
+  "imageProduct": "manzanaRoja-1745778262073.png",
+  "sales": 0,
+  "supplier": {
+    "$oid": "680d5e069577df4188915280"
+  },
+  "status": true,
+  "entryDate": {
+    "$date": "2025-04-27T18:24:22.098Z"
+  },
+  "createdAt": {
+    "$date": "2025-04-27T18:24:22.098Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:24:22.098Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680e76adfe39eb7d0f58e60e"
+  },
+  "nameProduct": "Aguacate Hass",
+  "descriptionProduct": "Aguacates de alta calidad, perfectos para guacamole.",
+  "price": 12.9,
+  "stock": 200,
+  "category": "Frutas",
+  "imageProduct": "aguacateHass-1745778349361.png",
+  "sales": 0,
+  "supplier": {
+    "$oid": "680d5e069577df4188915280"
+  },
+  "status": true,
+  "entryDate": {
+    "$date": "2025-04-27T18:25:49.398Z"
+  },
+  "createdAt": {
+    "$date": "2025-04-27T18:25:49.398Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:25:49.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680e7731fe39eb7d0f58e618"
+  },
+  "nameProduct": "Mouse Inalámbrico Logitech",
+  "descriptionProduct": "Mouse ergonómico inalámbrico con batería de larga duración.",
+  "price": 150,
+  "stock": 75,
+  "category": "Accesorios Electrónicos",
+  "imageProduct": "mouseInalambrico-1745778481061.png",
+  "sales": 0,
+  "supplier": {
+    "$oid": "680d5e069577df4188915280"
+  },
+  "status": true,
+  "entryDate": {
+    "$date": "2025-04-27T18:28:01.083Z"
+  },
+  "createdAt": {
+    "$date": "2025-04-27T18:28:01.084Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:28:01.084Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680e776dfe39eb7d0f58e61d"
+  },
+  "nameProduct": "Teclado Mecánico Redragon",
+  "descriptionProduct": "Teclado mecánico para gamers, retroiluminado RGB.",
+  "price": 325,
+  "stock": 50,
+  "category": "Accesorios Electrónicos",
+  "imageProduct": "tecladoMecanico-1745778541327.png",
+  "sales": 0,
+  "supplier": {
+    "$oid": "680d5e069577df4188915280"
+  },
+  "status": true,
+  "entryDate": {
+    "$date": "2025-04-27T18:29:01.352Z"
+  },
+  "createdAt": {
+    "$date": "2025-04-27T18:29:01.353Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:29:01.353Z"
+  }
+}]

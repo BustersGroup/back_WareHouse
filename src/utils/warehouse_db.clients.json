@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "680d53d7b1dbf96027d11671"
+  },
+  "nameClient": "Bodega la 111",
+  "emailClient": "bode11ga@gmial.com",
+  "contactClient": "13345678",
+  "addressClient": "12 Calle Zona 1",
+  "createdAt": {
+    "$date": "2025-04-26T21:44:55.924Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-26T21:44:55.924Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680e790cfeef6e82a08ac49e"
+  },
+  "nameClient": "Distribuidora López S.A.",
+  "emailClient": "contacto@distribuidoralp.com",
+  "contactClient": "5556-7890",
+  "addressClient": "Avenida Las Flores 123, Ciudad Nueva",
+  "createdAt": {
+    "$date": "2025-04-27T18:35:56.877Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:35:56.877Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680e7918feef6e82a08ac4a1"
+  },
+  "nameClient": "Servicios Pérez y Asociados",
+  "emailClient": "info@serviciospya.com",
+  "contactClient": "5567-1234",
+  "addressClient": "Colonia El Carmen, Zona 4",
+  "createdAt": {
+    "$date": "2025-04-27T18:36:08.335Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:36:08.335Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680e792dfeef6e82a08ac4a4"
+  },
+  "nameClient": "Martínez Market",
+  "emailClient": "ventas@martinezmarket.com",
+  "contactClient": "5578-4567",
+  "addressClient": "Residenciales Bella Vista, Lote 7",
+  "createdAt": {
+    "$date": "2025-04-27T18:36:29.501Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:36:29.501Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680e7938feef6e82a08ac4a7"
+  },
+  "nameClient": "Gómez Industrial S.R.L.",
+  "emailClient": "contact@gomezindustrial.com",
+  "contactClient": "5589-7890",
+  "addressClient": "Boulevard Los Próceres, Edificio Torre 2",
+  "createdAt": {
+    "$date": "2025-04-27T18:36:40.158Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:36:40.158Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680e793ffeef6e82a08ac4aa"
+  },
+  "nameClient": "Comercial Estrada",
+  "emailClient": "atencion@comercialestrada.com",
+  "contactClient": "5590-3456",
+  "addressClient": "Zona 10, Condominio La Estancia",
+  "createdAt": {
+    "$date": "2025-04-27T18:36:47.404Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-27T18:36:47.404Z"
+  }
+}]
