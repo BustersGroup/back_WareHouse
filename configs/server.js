@@ -12,6 +12,7 @@ import productRoutes from "../src/product/product.routes.js"
 import supplierRoutes from "../src/supplier/supplier.routes.js"
 import clientRoutes from "../src/client/client.routes.js"
 import { crearAdministrador } from "../src/user/user.controller.js"
+import movementRoutes from "../src/movements/movement.routes.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({extended: false}))
@@ -28,6 +29,7 @@ const routes = (app) =>{
     app.use("/backWarehouse/v1/product", productRoutes);
     app.use("/backWarehouse/v1/supplier", supplierRoutes);
     app.use("/backWarehouse/v1/client", clientRoutes);
+    app.use("/backWarehouse/v1/movement", movementRoutes);
 }
 
 const conectarDB = async () =>{

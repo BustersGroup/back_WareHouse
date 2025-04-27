@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "475c9897-6a6f-451c-af9e-8c74b17a493e",
+		"_postman_id": "560cab65-c440-4216-bc0d-3086fdeb1771",
 		"name": "Ware House",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37640614"
+		"_exporter_id": "41958993"
 	},
 	"item": [
 		{
@@ -45,7 +45,8 @@
 								{
 									"key": "profilePicture",
 									"type": "file",
-									"src": "/C:/Users/ema22/OneDrive/Imágenes/Screenshots/Captura de pantalla 2025-01-24 104455.png"
+									"src": [],
+									"disabled": true
 								},
 								{
 									"key": "phone",
@@ -343,7 +344,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"email\": \"andres77@gmail.com\",\r\n    \"password\": \"Emanue4341#\"\r\n}",
+							"raw": "{ \r\n    \"email\": \"andres111@gmail.com\",\r\n    \"password\": \"Emanue4341#\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -383,7 +384,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBjNWU5MzQyMjdiZGRmOTk5NTkyNjMiLCJpYXQiOjE3NDU2NDExMTksImV4cCI6MTc0NTY0NDcxOX0.FmPVrwE0uFsemDBlKlagjqDdvO0BPw4eE29Wsd2UlbM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
 									"type": "string"
 								}
 							]
@@ -421,11 +422,11 @@
 								{
 									"key": "imageProduct",
 									"type": "file",
-									"src": "/C:/Users/devyn/Downloads/cocacola.jpg"
+									"src": "/C:/Users/David Perez/Downloads/coca.jpeg"
 								},
 								{
-									"key": "supplier",
-									"value": "CocaCola Company",
+									"key": "nameSupplier",
+									"value": "Proveedores S.A.",
 									"type": "text"
 								}
 							]
@@ -629,6 +630,395 @@
 								"product",
 								"deleteProduct",
 								"680c5ed64227bddf9995926d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "supplier",
+			"item": [
+				{
+					"name": "registerProvedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nameSupplier\": \"Tecnología Avanzada\",\r\n        \"contactSupplier\": \"Juan Pérez\",\r\n        \"emailSupplier\": \"juan@tecavanzada.com\",\r\n        \"product\": \"Electrónica\",\r\n        \"status\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/supplier/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"supplier",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list Provedor",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/supplier/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"supplier",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list Provedores",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/supplier/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"supplier",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list Name provedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/supplier/find/Tecnología Avanzada",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"supplier",
+								"find",
+								"Tecnología Avanzada"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update provedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nameSupplier\": \"Tecnología Avanzada\",\r\n        \"contactSupplier\": \"Juan Pérddddez\",\r\n        \"emailSupplier\": \"juan@tecavadddddnzada.com\",\r\n        \"product\": \"Electrónddddddica\",\r\n        \"status\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/supplier/updateSupplier/680d772f14a12598ec537abc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"supplier",
+								"updateSupplier",
+								"680d772f14a12598ec537abc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Provedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/supplier/deleteSupplier/680d771714a12598ec537aad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"supplier",
+								"deleteSupplier",
+								"680d771714a12598ec537aad"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movement",
+			"item": [
+				{
+					"name": "recordMovements",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUxMWI4YWVhOTRlMDc4OGZmNWEiLCJpYXQiOjE3NDU3MjAwMzksImV4cCI6MTc0NTcyMzYzOX0.LaS-G342pcnuQmVFyNQlf1_jOKte698M_Cg541siqzk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/movement/Movements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"movement",
+								"Movements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerMotion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTk4MDksImV4cCI6MTc0NTcyMzQwOX0.1M2E7G-_dUDryPP3iIZ05ygyZVHBI_r6B6du9FUrGVk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"680d71c3b8aea94e0788ff8a\",\r\n  \"quantity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/movement/registerMotion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"movement",
+								"registerMotion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerMotionExit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTk4MDksImV4cCI6MTc0NTcyMzQwOX0.1M2E7G-_dUDryPP3iIZ05ygyZVHBI_r6B6du9FUrGVk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"680d71c3b8aea94e0788ff8a\",\r\n  \"quantity\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/movement/registerMotionExit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"movement",
+								"registerMotionExit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movement product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUxMWI4YWVhOTRlMDc4OGZmNWEiLCJpYXQiOjE3NDU3MjAwMzksImV4cCI6MTc0NTcyMzYzOX0.LaS-G342pcnuQmVFyNQlf1_jOKte698M_Cg541siqzk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/movement/Movements/680d71c3b8aea94e0788ff8a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"movement",
+								"Movements",
+								"680d71c3b8aea94e0788ff8a"
 							]
 						}
 					},

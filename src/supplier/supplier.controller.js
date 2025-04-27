@@ -6,23 +6,29 @@ export const createSupplier = async (req, res) => {
     try {
         const data = req.body;
 
+        // Crea un nuevo proveedor usando los datos recibidos
         const supplier = new Supplier(data);
+        
+        // Guarda el proveedor en la base de datos
         await supplier.save();
 
+        // Responde con un estado 201 (creado) y los datos del proveedor
         res.status(201).json({
             success: true,
             msg: "Supplier created successfully",
-            supplier
+            supplier // El proveedor recién creado
         });
 
     } catch (error) {
+        // Maneja los errores y responde con un estado 500 (error del servidor)
         res.status(500).json({
             success: false,
             msg: "Error creating supplier",
-            error: error.message 
+            error: error.message // Incluye el mensaje de error para facilitar la depuración
         });
     }
 };
+
 
 
 export const getSuppliers = async (req, res) => {
