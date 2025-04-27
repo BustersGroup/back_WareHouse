@@ -7,9 +7,9 @@ import { hasRoles } from "../middlewares/validate-roles.js";
 export const createClientValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),
-    body("nameClient").notEmpty().withMessage("El nombre del proveedor es requerido").isLength({ max: 50 }).withMessage("El nombre no puede exceder los 50 caracteres"),
+    body("nameClient").notEmpty().withMessage("El nombre del proveedor es requerido").withMessage("El nombre no puede exceder los 50 caracteres"),
     body("emailClient").notEmpty().withMessage("El email es requerido").isEmail().withMessage("El email no es válido"),
-    body("contactClient").notEmpty().withMessage("El contacto es requerido").isLength({ min: 8, max: 8 }).withMessage("El contacto debe tener 8 dígitos"),
+    body("contactClient").notEmpty().withMessage("El contacto es requerido").withMessage("El contacto debe tener 8 dígitos"),
     validarCampos,
 ];
 
