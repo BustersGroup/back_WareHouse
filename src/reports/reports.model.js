@@ -44,4 +44,4 @@
         versionKey: false 
     })
 
-    export default model('Reports', reportSchema);
+    export default model('Reports', reportSchema)
