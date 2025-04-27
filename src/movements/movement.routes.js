@@ -1,15 +1,54 @@
 import { Router } from "express";
-import {registerEntry,registerExit,MovementsByProduct, Movements} from "./movement.controller.js";
-import {posEntranceValidator, posExitsValidator, getListMovementValidator, getLisValidator} from "../middlewares/movement-validators.js";
 
 const router = Router();
 
-router.post("/registerMotion", posEntranceValidator, registerEntry);
+// Define tus rutas aquí
+router.post("/registerMotion", (req, res) => {
+    res.send("Movimiento registrado");
+});
 
-router.post("/registerMotionExit", posExitsValidator, registerExit);
-
-router.get("/Movements/:productId", getListMovementValidator, MovementsByProduct);
-
-router.get("/Movements", getLisValidator, Movements);
+router.get("/Movements", (req, res) => {
+    res.send("Lista de movimientos");
+});
 
 export default router;
+
+/**
+ * @swagger
+ * tags:
+ *   name: Movements
+ *   description: Endpoints para la gestión de movimientos
+ */
+
+/**
+ * @swagger
+ * /backWarehouse/v1/movement/registerMotion:
+ *   post:
+ *     summary: Registrar una entrada de movimiento
+ *     tags: [Movements]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               productId:
+ *                 type: string
+ *               quantity:
+ *                 type: number
+ *     responses:
+ *       201:
+ *         description: Movimiento registrado exitosamente.
+ */
+
+/**
+ * @swagger
+ * /backWarehouse/v1/movement/Movements:
+ *   get:
+ *     summary: Obtener todos los movimientos
+ *     tags: [Movements]
+ *     responses:
+ *       200:
+ *         description: Lista de movimientos.
+ */
