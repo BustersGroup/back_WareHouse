@@ -1,15 +1,9 @@
-
 import { Schema, model } from 'mongoose';
 
-const movementSchema = new Schema({
+const movementEntrySchema = new Schema({
     product: {
         type: Schema.Types.ObjectId,
-        ref: 'Product',  
-        required: true,
-    },
-    type: {
-        type: String,
-        enum: ['entrada', 'salida'],
+        ref: 'Product',
         required: true,
     },
     quantity: {
@@ -23,15 +17,15 @@ const movementSchema = new Schema({
     },
     employee: {
         type: Schema.Types.ObjectId,
-        ref: 'User', 
+        ref: 'User',
         required: true,
     },
     motive: {
         type: String,  
-    },
-    destination: {
-        type: String,  
     }
+}, {
+    timestamps: true,
+    versionKey: false
 });
 
-export default model('Movement', movementSchema);
+export default model('MovementEntry', movementEntrySchema);

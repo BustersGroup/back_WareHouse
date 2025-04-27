@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "560cab65-c440-4216-bc0d-3086fdeb1771",
+		"_postman_id": "b6d88aba-74ca-4fa1-87cb-134de0fcab25",
 		"name": "Ware House",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "41958993"
@@ -344,7 +344,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"email\": \"andres111@gmail.com\",\r\n    \"password\": \"Emanue4341#\"\r\n}",
+							"raw": "{ \r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"Abc123**\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1019,6 +1019,41 @@
 								"movement",
 								"Movements",
 								"680d71c3b8aea94e0788ff8a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movementProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlYWQwOWFmMzczNWY0NTJmNjA0MTkiLCJpYXQiOjE3NDU3OTM0ODAsImV4cCI6MTc0NTc5NzA4MH0.P-GdwOEYqR7pEzdvxk2zSjxKKxDxehXw_2Bq7KIqV30",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/movement/movement/product/680e7593fe39eb7d0f58e5ff/history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"movement",
+								"movement",
+								"product",
+								"680e7593fe39eb7d0f58e5ff",
+								"history"
 							]
 						}
 					},

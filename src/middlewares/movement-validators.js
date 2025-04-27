@@ -23,7 +23,14 @@ export const posExitsValidator = [
     handleErrors
 ]
 
-export const getListMovementValidator = [
+export const getListClientMovements = [
+    validateJWT,
+    validarCampos,
+    deleteFileOnError,
+    handleErrors
+]
+
+export const getLisEmployeeMovementsValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE","EMPLOYEE_ROLE"),
     validarCampos,
@@ -31,7 +38,7 @@ export const getListMovementValidator = [
     handleErrors
 ]
 
-export const getLisValidator = [
+export const getLisHistory = [
     validateJWT,
     hasRoles("ADMIN_ROLE","EMPLOYEE_ROLE"),
     validarCampos,
