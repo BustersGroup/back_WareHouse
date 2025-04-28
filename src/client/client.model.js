@@ -3,7 +3,7 @@ import {Schema, model} from 'mongoose';
 const clientSchema = new Schema({
     nameClient: {
         type: String,
-        required: [true, "Name client is required"]
+        required: [true, "Name client is required"],
     },
     emailClient: {
         type: String,
