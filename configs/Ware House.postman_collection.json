@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "b6d88aba-74ca-4fa1-87cb-134de0fcab25",
+		"_postman_id": "ca260740-9b1f-4568-8e1b-6af3def57183",
 		"name": "Ware House",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41958993"
+		"_exporter_id": "37640614"
 	},
 	"item": [
 		{
@@ -638,10 +638,10 @@
 			]
 		},
 		{
-			"name": "supplier",
+			"name": "Supplier",
 			"item": [
 				{
-					"name": "registerProvedor",
+					"name": "Register Supplier",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -682,7 +682,7 @@
 					"response": []
 				},
 				{
-					"name": "list Provedor",
+					"name": "List Supplier",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -719,13 +719,25 @@
 					"response": []
 				},
 				{
-					"name": "list Provedores",
+					"name": "Find Supplier",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
 							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:3001/backWarehouse/v1/supplier/",
 							"protocol": "http",
@@ -744,7 +756,7 @@
 					"response": []
 				},
 				{
-					"name": "list Name provedor",
+					"name": "Find Name Supplier",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -777,7 +789,7 @@
 					"response": []
 				},
 				{
-					"name": "update provedor",
+					"name": "Update Supplier",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -819,7 +831,7 @@
 					"response": []
 				},
 				{
-					"name": "Eliminar Provedor",
+					"name": "Delete Supplier",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -863,10 +875,215 @@
 			]
 		},
 		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Register Client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nameClient\": \"Tecnología Avanzada\",\r\n        \"emailClient\": \"juan@tecavanzada.com\",\r\n        \"contactClient\": \"Juan Pérez\",\r\n        \"addressClient\": \"Electrónica\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/client/registerClient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"client",
+								"registerClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Clients",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/client/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"client",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Client by Name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/client/findClient/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"client",
+								"findClient",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nameSupplier\": \"Tecnología Avanzada\",\r\n        \"contactSupplier\": \"Juan Pérddddez\",\r\n        \"emailSupplier\": \"juan@tecavadddddnzada.com\",\r\n        \"product\": \"Electrónddddddica\",\r\n        \"status\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/client/updateClient/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"client",
+								"updateClient",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/client/deleteClient/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"client",
+								"deleteClient",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Movement",
 			"item": [
 				{
-					"name": "recordMovements",
+					"name": "Record Movement",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -898,7 +1115,7 @@
 					"response": []
 				},
 				{
-					"name": "registerMotion",
+					"name": "Register Motion",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -939,7 +1156,7 @@
 					"response": []
 				},
 				{
-					"name": "registerMotionExit",
+					"name": "Register Motion Exit",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -980,7 +1197,7 @@
 					"response": []
 				},
 				{
-					"name": "movement product",
+					"name": "Movement Product",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1025,7 +1242,7 @@
 					"response": []
 				},
 				{
-					"name": "movementProduct",
+					"name": "Movement Product History",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1054,6 +1271,97 @@
 								"product",
 								"680e7593fe39eb7d0f58e5ff",
 								"history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "Movements Summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBjNTNiOWNjYmI3NWE4NTU5ZTM0YTEiLCJpYXQiOjE3NDU4MDI2MzksImV4cCI6MTc0NTgwNjIzOX0.S-VHmsiNWNT1uP4fMDK27TyERqnjmu_SsnIOrwZQbYI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\":\"2025-05-26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/reports/movementsSummary?startDate=2024-01-01&endDate=2024-12-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"reports",
+								"movementsSummary"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-12-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report Inventory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBjNTNiOWNjYmI3NWE4NTU5ZTM0YTEiLCJpYXQiOjE3NDU3OTk0NDcsImV4cCI6MTc0NTgwMzA0N30.u708kLG2go_LikY-yuZ9Fux_-OfRSovxUJIKNXIBanM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/reports/inventory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"reports",
+								"inventory"
 							]
 						}
 					},

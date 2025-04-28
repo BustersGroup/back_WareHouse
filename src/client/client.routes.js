@@ -1,54 +1,13 @@
 import { Router } from "express";
+import { addClient, getClientbyName, getClients, updateClient, deleteClient } from "./client.controller.js";
+import { createClientValidator, getClientsValidator, updateClientValidator, deleteClientValidator } from "../middlewares/client-validators.js";
 
 const router = Router();
 
-// Define tus rutas aquí
-router.post("/registerClient", (req, res) => {
-    res.send("Cliente registrado");
-});
-
-router.get("/clients", (req, res) => {
-    res.send("Lista de clientes");
-});
+router.post("/registerClient", createClientValidator, addClient)
+router.get("/clients", getClientsValidator, getClients)
+router.get("/findClient/:nameClient", getClientsValidator, getClientbyName)
+router.put("/updateClient/:id", updateClientValidator, updateClient)
+router.delete("/deleteClient/:id", deleteClientValidator, deleteClient)
 
 export default router;
-
-/**
- * @swagger
- * tags:
- *   name: Clients
- *   description: Endpoints para la gestión de clientes
- */
-
-/**
- * @swagger
- * /backWarehouse/v1/client/registerClient:
- *   post:
- *     summary: Registrar un cliente
- *     tags: [Clients]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               name:
- *                 type: string
- *               email:
- *                 type: string
- *     responses:
- *       201:
- *         description: Cliente registrado exitosamente.
- */
-
-/**
- * @swagger
- * /backWarehouse/v1/client/clients:
- *   get:
- *     summary: Obtener todos los clientes
- *     tags: [Clients]
- *     responses:
- *       200:
- *         description: Lista de clientes.
- */

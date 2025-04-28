@@ -15,6 +15,7 @@ import supplierRoutes from "../src/supplier/supplier.routes.js"
 import clientRoutes from "../src/client/client.routes.js"
 import { crearAdministrador } from "../src/user/user.controller.js"
 import movementRoutes from "../src/movements/movement.routes.js"
+import reportsRoutes from "../src/reports/reports.routes.js"
 
 const swaggerDefinition = {
     openapi: "3.0.0",
@@ -57,6 +58,7 @@ const routes = (app) => {
     app.use("/backWarehouse/v1/supplier", supplierRoutes);
     app.use("/backWarehouse/v1/client", clientRoutes);
     app.use("/backWarehouse/v1/movement", movementRoutes);
+    app.use("/backWarehouse/v1/reports", reportsRoutes);
 };
 
 const conectarDB = async () => {

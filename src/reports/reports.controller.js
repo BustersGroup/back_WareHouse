@@ -1,11 +1,8 @@
-import Product from '../product/product.model.js'
-import Movement from './movement.model.js'
-import jwt from 'jsonwebtoken'
-import mongoose from 'mongoose'
+import Product from '../product/product.model.js';
+import MovementEntry from '../movements/movementEntry.model.js';
+import MovementExit from '../movements/movementExit.model.js';
 
-
-
-const getInventoryReport = async (req, res) => {
+export const getInventoryReport = async (req, res) => {
   try {
     const products = await Product.find();
 
@@ -22,37 +19,44 @@ const getInventoryReport = async (req, res) => {
         stock: product.stock,
         price: product.price,
         value: product.stock * product.price
-      }
-    })
+      };
+    });
 
     return res.json({
       totalStock,
       totalInventoryValue,
       products: productDetails
-    })
+    });
 
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: 'Error generating inventory report' })
+    return res.status(500).json({ message: 'Error generating inventory report' });
   }
-}
+};
 
-const getMovementSummary = async (req, res) => {
+export const getMovementSummary = async (req, res) => {
   try {
     const { startDate, endDate } = req.query;
 
     if (!startDate || !endDate) {
-      return res.status(400).json({ message: 'startDate and endDate are required' })
+      return res.status(400).json({ message: 'startDate and endDate are required' });
     }
 
     const start = new Date(startDate);
     const end = new Date(endDate);
 
-    const movements = await Movement.find({
-      date: { $gte: start, $lte: end } }).populate('product', 'name')
+    const entries = await MovementEntry.find({
+      date: { $gte: start, $lte: end }
+    })
+    .populate('product', 'name')
+    .populate('employee', 'name');
 
-    const entries = movements.filter(m => m.type === 'entrada')
-    const exits = movements.filter(m => m.type === 'salida')
+    const exits = await MovementExit.find({
+      date: { $gte: start, $lte: end }
+    })
+    .populate('product', 'name')
+    .populate('employee', 'name')
+    .populate('client', 'name');
 
     return res.json({
       period: { startDate, endDate },
@@ -62,9 +66,8 @@ const getMovementSummary = async (req, res) => {
         productName: entry.product.name,
         quantity: entry.quantity,
         date: entry.date,
-        employee: entry.employee,
-        motive: entry.motive,
-        destination: entry.destination
+        employeeName: entry.employee.name,
+        motive: entry.motive
       })),
       exits: exits.map(exit => ({
         id: exit._id,
@@ -72,15 +75,14 @@ const getMovementSummary = async (req, res) => {
         productName: exit.product.name,
         quantity: exit.quantity,
         date: exit.date,
-        employee: exit.employee,
-        motive: exit.motive,
-        destination: exit.destination
+        employeeName: exit.employee.name,
+        clientName: exit.client.name,
+        motive: exit.motive
       }))
-    })
+    });
 
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: 'Error generating movement summary' })
+    return res.status(500).json({ message: 'Error generating movement summary' });
   }
-}
-
+};

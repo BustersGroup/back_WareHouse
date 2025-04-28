@@ -3,8 +3,7 @@ import {Schema, model} from 'mongoose';
 const clientSchema = new Schema({
     nameClient: {
         type: String,
-        required: [true, "Name client is required"],
-        maxLength: [60, "Name client cannot exceed 60 characters"]
+        required: [true, "Name client is required"]
     },
     emailClient: {
         type: String,
