@@ -1,0 +1,1373 @@
+{
+	"info": {
+		"_postman_id": "ca260740-9b1f-4568-8e1b-6af3def57183",
+		"name": "Ware House",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37640614"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Andres",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "ruiz",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "andres_11",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "andres111@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Emanue4341#",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN_ROLE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/backWarehouse/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/backWarehouse/v1/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBjMjI0MzNkYThkNmQwNmJkMGQ4MDEiLCJpYXQiOjE3NDU2NDAwNTAsImV4cCI6MTc0NTY0MzY1MH0.7BzoEjhhqDr_o9nIx0Y6iiDBPknBXfWJSDFOoBINNLI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/ema22/OneDrive/Imágenes/Screenshots/Captura de pantalla 2025-01-24 115033.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/backWarehouse/v1/user/updateProfilePicture/680c22433da8d6d06bd0d801",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"user",
+								"updateProfilePicture",
+								"680c22433da8d6d06bd0d801"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBjMjI0MzNkYThkNmQwNmJkMGQ4MDEiLCJpYXQiOjE3NDU2Mzk1OTYsImV4cCI6MTc0NTY0MzE5Nn0.vZABVgYgt80VPgPKGnahF6KUQiCuOHJvvWPRVyRVvbQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"confirmDelete\": \"yes\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/backWarehouse/v1/user/deleteUser/680c22433da8d6d06bd0d801",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"user",
+								"deleteUser",
+								"680c22433da8d6d06bd0d801"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBjMjI0MzNkYThkNmQwNmJkMGQ4MDEiLCJpYXQiOjE3NDU2Mzk1OTYsImV4cCI6MTc0NTY0MzE5Nn0.vZABVgYgt80VPgPKGnahF6KUQiCuOHJvvWPRVyRVvbQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Emauel\",\r\n    \"surname\": \"ruiz77\",\r\n    \"username\": \"andres_rz\",\r\n    \"email\": \"andres77@gmail.com\",\r\n    \"profilePicture\": \"20210321_081400-1741019785436.jpg\",\r\n    \"phone\": \"46735976\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/backWarehouse/v1/user/updateUser/680c22433da8d6d06bd0d801",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"user",
+								"updateUser",
+								"680c22433da8d6d06bd0d801"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBjMjQyMjNkYThkNmQwNmJkMGQ4MGEiLCJpYXQiOjE3NDU2Mzk0MjEsImV4cCI6MTc0NTY0MzAyMX0.EEcf0MXHB46yTljyrPr7weoJRjy86qji_wO0btEQh60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"currentPassword\": \"Antonio123**\",\r\n  \"newPassword\": \"nueva_contraseña\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/backWarehouse/v1/user/updatePassword/680c24223da8d6d06bd0d80a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"user",
+								"updatePassword",
+								"680c24223da8d6d06bd0d80a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Rol",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1ZDczYmViYWUwZGQ3MGJhNzUwYzUiLCJpYXQiOjE3NDEwMjIwMjcsImV4cCI6MTc0MTAyNTYyN30.IfqXULwYn5d16-31T6M2qQg-npPjCM2JbeabYNcjnic",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"role\": \"ADMIN_ROLE\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/empresaBimestral/v1/user/updateRole/67c5da890f55fb28878c0d23",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"empresaBimestral",
+								"v1",
+								"user",
+								"updateRole",
+								"67c5da890f55fb28878c0d23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"Abc123**\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/backWarehouse/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Register Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nameProduct",
+									"value": "Pepsi",
+									"type": "text"
+								},
+								{
+									"key": "descriptionProduct",
+									"value": "Coca Cola 3 litros",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "40.50",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Bebidas",
+									"type": "text"
+								},
+								{
+									"key": "imageProduct",
+									"type": "file",
+									"src": "/C:/Users/David Perez/Downloads/coca.jpeg"
+								},
+								{
+									"key": "nameSupplier",
+									"value": "Proveedores S.A.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/product/registerProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"product",
+								"registerProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/product/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"product",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Product by Name",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/product/findProduct/Pepsi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"product",
+								"findProduct",
+								"Pepsi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Product by Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/product/category/Bebidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"product",
+								"category",
+								"Bebidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Product by Entry Date",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/product/entryDate/2025-04-26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"product",
+								"entryDate",
+								"2025-04-26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBjNWU5MzQyMjdiZGRmOTk5NTkyNjMiLCJpYXQiOjE3NDU2NDExMTksImV4cCI6MTc0NTY0NDcxOX0.FmPVrwE0uFsemDBlKlagjqDdvO0BPw4eE29Wsd2UlbM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nameProduct\":\"Seven\",\r\n    \"stock\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/product/updateProduct/680c5ebd4227bddf99959268",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"product",
+								"updateProduct",
+								"680c5ebd4227bddf99959268"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBjNWU5MzQyMjdiZGRmOTk5NTkyNjMiLCJpYXQiOjE3NDU2NDExMTksImV4cCI6MTc0NTY0NDcxOX0.FmPVrwE0uFsemDBlKlagjqDdvO0BPw4eE29Wsd2UlbM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"confirm\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/product/deleteProduct/680c5ed64227bddf9995926d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"product",
+								"deleteProduct",
+								"680c5ed64227bddf9995926d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Supplier",
+			"item": [
+				{
+					"name": "Register Supplier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nameSupplier\": \"Tecnología Avanzada\",\r\n        \"contactSupplier\": \"Juan Pérez\",\r\n        \"emailSupplier\": \"juan@tecavanzada.com\",\r\n        \"product\": \"Electrónica\",\r\n        \"status\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/supplier/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"supplier",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Supplier",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/supplier/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"supplier",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Supplier",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/supplier/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"supplier",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Name Supplier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/supplier/find/Tecnología Avanzada",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"supplier",
+								"find",
+								"Tecnología Avanzada"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Supplier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nameSupplier\": \"Tecnología Avanzada\",\r\n        \"contactSupplier\": \"Juan Pérddddez\",\r\n        \"emailSupplier\": \"juan@tecavadddddnzada.com\",\r\n        \"product\": \"Electrónddddddica\",\r\n        \"status\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/supplier/updateSupplier/680d772f14a12598ec537abc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"supplier",
+								"updateSupplier",
+								"680d772f14a12598ec537abc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Supplier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/supplier/deleteSupplier/680d771714a12598ec537aad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"supplier",
+								"deleteSupplier",
+								"680d771714a12598ec537aad"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Register Client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nameClient\": \"Tecnología Avanzada\",\r\n        \"emailClient\": \"juan@tecavanzada.com\",\r\n        \"contactClient\": \"Juan Pérez\",\r\n        \"addressClient\": \"Electrónica\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/client/registerClient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"client",
+								"registerClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Clients",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/client/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"client",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Client by Name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/client/findClient/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"client",
+								"findClient",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nameSupplier\": \"Tecnología Avanzada\",\r\n        \"contactSupplier\": \"Juan Pérddddez\",\r\n        \"emailSupplier\": \"juan@tecavadddddnzada.com\",\r\n        \"product\": \"Electrónddddddica\",\r\n        \"status\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/client/updateClient/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"client",
+								"updateClient",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTA2MzgsImV4cCI6MTc0NTcxNDIzOH0.HHBHwYeVXtqZ0f6J-vpFDiNBLcRvTo-Fqj5KuV5pP5k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/client/deleteClient/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"client",
+								"deleteClient",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movement",
+			"item": [
+				{
+					"name": "Record Movement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUxMWI4YWVhOTRlMDc4OGZmNWEiLCJpYXQiOjE3NDU3MjAwMzksImV4cCI6MTc0NTcyMzYzOX0.LaS-G342pcnuQmVFyNQlf1_jOKte698M_Cg541siqzk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/movement/Movements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"movement",
+								"Movements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Motion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTk4MDksImV4cCI6MTc0NTcyMzQwOX0.1M2E7G-_dUDryPP3iIZ05ygyZVHBI_r6B6du9FUrGVk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"680d71c3b8aea94e0788ff8a\",\r\n  \"quantity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/movement/registerMotion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"movement",
+								"registerMotion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Motion Exit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUyYmI4YWVhOTRlMDc4OGZmNWYiLCJpYXQiOjE3NDU3MTk4MDksImV4cCI6MTc0NTcyMzQwOX0.1M2E7G-_dUDryPP3iIZ05ygyZVHBI_r6B6du9FUrGVk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"680d71c3b8aea94e0788ff8a\",\r\n  \"quantity\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/movement/registerMotionExit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"movement",
+								"registerMotionExit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Movement Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkNmUxMWI4YWVhOTRlMDc4OGZmNWEiLCJpYXQiOjE3NDU3MjAwMzksImV4cCI6MTc0NTcyMzYzOX0.LaS-G342pcnuQmVFyNQlf1_jOKte698M_Cg541siqzk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/movement/Movements/680d71c3b8aea94e0788ff8a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"movement",
+								"Movements",
+								"680d71c3b8aea94e0788ff8a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Movement Product History",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBlYWQwOWFmMzczNWY0NTJmNjA0MTkiLCJpYXQiOjE3NDU3OTM0ODAsImV4cCI6MTc0NTc5NzA4MH0.P-GdwOEYqR7pEzdvxk2zSjxKKxDxehXw_2Bq7KIqV30",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/movement/movement/product/680e7593fe39eb7d0f58e5ff/history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"movement",
+								"movement",
+								"product",
+								"680e7593fe39eb7d0f58e5ff",
+								"history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "Movements Summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBjNTNiOWNjYmI3NWE4NTU5ZTM0YTEiLCJpYXQiOjE3NDU4MDI2MzksImV4cCI6MTc0NTgwNjIzOX0.S-VHmsiNWNT1uP4fMDK27TyERqnjmu_SsnIOrwZQbYI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\":\"2025-05-26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/reports/movementsSummary?startDate=2024-01-01&endDate=2024-12-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"reports",
+								"movementsSummary"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-12-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report Inventory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBjNTNiOWNjYmI3NWE4NTU5ZTM0YTEiLCJpYXQiOjE3NDU3OTk0NDcsImV4cCI6MTc0NTgwMzA0N30.u708kLG2go_LikY-yuZ9Fux_-OfRSovxUJIKNXIBanM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/backWarehouse/v1/reports/inventory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"backWarehouse",
+								"v1",
+								"reports",
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
