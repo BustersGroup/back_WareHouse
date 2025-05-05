@@ -1,4 +1,3 @@
-'use strict';
 import MovementEntry  from './movementEntry.model.js';
 import MovementExit from './movementExit.model.js';
 import Product from '../product/product.model.js';
@@ -11,11 +10,12 @@ export const registerEntry = async (req, res) => {
         const token = req.header("Authorization");
         const { uid: userId } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
 
-        const { productId, quantity } = req.body;
+        const { nameProduct, quantity } = req.body;
 
-        const product = await Product.findById(productId).populate('supplier', 'nameSupplier');
+        const product = await Product.findOne({ nameProduct }).populate('supplier', 'nameSupplier');
+
         if (!product) {
-            return res.status(404).json({ message: "Producto no encontrado" });
+            return res.status(404).json({ message: "Producto no encontrado con ese nombre" });
         }
 
         product.stock += quantity;
@@ -50,21 +50,49 @@ export const registerEntry = async (req, res) => {
     }
 };
 
+export const ListEntries = async (req, res) => {
+    try {
+        const entries = await MovementEntry.find()
+            .populate('product', 'nameProduct')
+            .populate('employee', 'name surname')
+            .sort({ date: -1 });
+
+        const formattedEntries = entries.map(entry => ({
+            date: entry.date,
+            quantity: entry.quantity,
+            motive: entry.motive,
+            productName: entry.product?.nameProduct || 'Producto no encontrado',
+            employee: {
+                name: entry.employee?.name || 'Desconocido',
+                surname: entry.employee?.surname || ''
+            }
+        }));
+
+        res.status(200).json({
+            message: "Historial completo de entradas",
+            entries: formattedEntries
+        });
+
+    } catch (error) {
+        res.status(500).json({ message: "Error al obtener entradas", error: error.message });
+    }
+};
+
 export const registerExit = async (req, res) => {
     try {
         const token = req.header("Authorization");
         const { uid: employeeId } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
 
-        const { productId, quantity, motive, destination, clientId } = req.body;
+        const { nameProduct, quantity, motive, destination, emailClient } = req.body;
 
-        const product = await Product.findById(productId);
+        const product = await Product.findOne({ nameProduct });
         if (!product) {
-            return res.status(404).json({ message: "Producto no encontrado" });
+            return res.status(404).json({ message: "Producto no encontrado con ese nombre" });
         }
 
-        const client = await Client.findById(clientId).select("name");
+        const client = await Client.findOne({ emailClient }).select("nameClient");
         if (!client) {
-            return res.status(404).json({ message: "Cliente no encontrado" });
+            return res.status(404).json({ message: "Cliente no encontrado con ese correo" });
         }
 
         if (product.stock < quantity) {
@@ -77,8 +105,8 @@ export const registerExit = async (req, res) => {
 
         const movementExit = new MovementExit({
             product: product._id,
-            client: clientId,
-            employee: employeeId, 
+            client: client._id,
+            employee: employeeId,
             quantity,
             motive,
             destination,
@@ -92,7 +120,7 @@ export const registerExit = async (req, res) => {
             exit: {
                 date: movementExit.date,
                 quantity: movementExit.quantity,
-                clientName: client.name, 
+                clientName: client.nameClient,
                 motive: movementExit.motive,
                 destination: movementExit.destination
             },
@@ -108,67 +136,33 @@ export const registerExit = async (req, res) => {
     }
 };
 
-
-export const EmployeeMovements = async (req, res) => {
+export const ListExit = async (req, res) => {
     try {
-        const token = req.header("Authorization");
-        const { uid: employeeId } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
-
-        const { userId } = req.query;  
-
-        let entries;
-        let exits;
-
-        if (userId) {
-            entries = await MovementEntry.find({ employee: employeeId, client: userId })
-                .populate('product', 'nameProduct')
-                .sort({ date: -1 });
-            
-            exits = await MovementExit.find({ employee: employeeId, client: userId })
-                .populate('product', 'nameProduct')
-                .sort({ date: -1 });
-        } else {
-            entries = await MovementEntry.find({ employee: employeeId })
-                .populate('product', 'nameProduct')
-                .sort({ date: -1 });
-            
-            exits = await MovementExit.find({ employee: employeeId })
-                .populate('product', 'nameProduct')
-                .sort({ date: -1 });
-        }
-
-        res.status(200).json({
-            message: "Historial de movimientos del empleado (entrada y salida)",
-            entries,
-            exits
-        });
-
-    } catch (error) {
-        return res.status(500).json({ message: "Error al obtener los movimientos del empleado", error: error.message });
-    }
-};
-
-export const ProductAllMovements = async (req, res) => {
-    try {
-        const { productId } = req.params;
-
-        const entries = await MovementEntry.find({ product: productId })
-            .populate('employee', 'name')
+        const exits = await MovementExit.find()
+            .populate('product', 'nameProduct')
+            .populate('employee', 'name surname')
+            .populate('client', 'nameClient')
             .sort({ date: -1 });
 
-        const exits = await MovementExit.find({ product: productId })
-            .populate('client', 'name')
-            .sort({ date: -1 });
-
-        res.status(200).json({
-            message: "Historial completo del producto",
-            movements: {
-                entries,
-                exits
+        const formattedExits = exits.map(exit => ({
+            date: exit.date,
+            quantity: exit.quantity,
+            motive: exit.motive,
+            destination: exit.destination,
+            productName: exit.product?.nameProduct || 'Producto no encontrado',
+            clientName: exit.client?.nameClient || 'Cliente no encontrado',
+            employee: {
+                name: exit.employee?.name || 'Desconocido',
+                surname: exit.employee?.surname || ''
             }
+        }));
+
+        res.status(200).json({
+            message: "Historial completo de salidas",
+            exits: formattedExits
         });
 
     } catch (error) {
-        return res.status(500).json({ message: "Error al obtener el historial del producto", error: error.message });
+        res.status(500).json({ message: "Error al obtener salidas", error: error.message });
     }
 };
